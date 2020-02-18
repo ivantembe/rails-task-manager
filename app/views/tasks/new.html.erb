@@ -1,0 +1,44 @@
+<h2>Create new task</h2>
+
+<!-- <form class="w-50">
+  <div class="form-group">
+    <label>Title</label>
+    <input type="email" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Details</label>
+    <input type="email" class="form-control">
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input">
+    <label class="form-check-label">Completed</label>
+  </div>
+  <button type="submit" class="btn btn-primary mt-3">Create task</button>
+</form> -->
+
+
+<div class="w-50">
+  <%= form_for(@task) do |f| %>
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+    <%= f.label :details %>
+    <%= f.text_field :details, class: 'form-control' %>
+    </div>
+
+    <div class="form-check">
+      <%= f.check_box :completed, class: 'form-check-input' %>
+      <%= f.label :completed %>
+    </div>
+    <%= f.submit class: 'btn btn-primary mt-3' %>
+  <% end %>
+</div>
+
+
+
+
+
+

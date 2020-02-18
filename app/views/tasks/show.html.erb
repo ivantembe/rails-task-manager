@@ -1,0 +1,25 @@
+<div class="d-flex w-50 justify-content-between mb-4">
+  <h2><%= @task.title  %></h2>
+  <%= link_to 'Edit', task_edit_path(@task), class: 'btn btn-link' %>
+</div>
+
+
+<div class="border w-50 p-3 bg-light rounded border-danger">
+  <p class="m-0 text-danger"><%= @task.details %></p>
+</div>
+
+<div class="form-check my-4 border-bottom w-50 pb-3">
+  <% if @task.completed %>
+   <input class="form-check-input" type="checkbox" checked disabled>
+   <label class="form-check-label">
+      This task is completed.
+   </label>
+  <% else %>
+    <input class="form-check-input" type="checkbox" disabled>
+    <label class="form-check-label">
+      This task is not yet completed.
+    </label>
+  <% end %>
+</div>
+
+<%= link_to 'Back to list', tasks_path %>

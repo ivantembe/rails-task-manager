@@ -1,0 +1,25 @@
+<h2>My tasks</h2>
+
+<div class="my-3">
+  <% @tasks.each do |task| %>
+    <div class="form-check border-bottom w-25 d-flex py-2">
+      <% if task.completed %>
+        <input class="form-check-input" type="checkbox" checked>
+        <% else %>
+        <input class="form-check-input" type="checkbox">
+      <% end %>
+      <label class="form-check-label w-100 d-flex justify-content-between">
+        <%= link_to task.title, task_path(task.id)%>
+        <%= link_to task_path(task), method: :delete  do %>
+            <i class="far fa-trash-alt"></i>
+        <% end %>
+
+      </label>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to 'Add new task', tasks_new_path %>
+
+
+
